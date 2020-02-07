@@ -1,0 +1,7 @@
+###服务启动端口号
+server:
+  port: 9001
+  tomcat:
+      max-threads: 3        #最大并发数
+
+

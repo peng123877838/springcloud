@@ -1,0 +1,10 @@
+target
+*.iml
+dir_conflicts.prej
+.springBeans
+.factorypath
+.classpath
+.settings
+.apt_generated_tests
+.apt_generated
+.project
