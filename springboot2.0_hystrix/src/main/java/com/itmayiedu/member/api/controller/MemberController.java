@@ -30,15 +30,16 @@ public class MemberController {
 	
 	@RequestMapping("/getMember2")
 	@HystrixCommand(fallbackMethod = "getMember2Fail", commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "100"),
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "10"),
             @HystrixProperty(name = "execution.isolation.semaphore.maxConcurrentRequests", value = "1"),
-            @HystrixProperty(name = "fallback.isolation.semaphore.maxConcurrentRequests", value = "10"),
-            @HystrixProperty(name = "execution.isolation.strategy", value ="SEMAPHORE")
+            @HystrixProperty(name = "fallback.isolation.semaphore.maxConcurrentRequests", value = "1"),
+           // @HystrixProperty(name = "execution.isolation.strategy", value ="SEMAPHORE")
+            @HystrixProperty(name = "execution.isolation.strategy", value ="THREAD")
     })
 	public MemberParam getMember2(MemberParam param) {
 		System.out.println(Thread.currentThread().getName()+"---"+Thread.currentThread().getThreadGroup().getName());
 		try {
-			Thread.sleep(1500);
+			Thread.sleep(2500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
