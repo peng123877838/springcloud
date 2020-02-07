@@ -2,6 +2,6 @@
 server:
   port: 9001
   tomcat:
-      max-threads: 3        #最大并发数
+      max-threads: 5       #最大并发数
 
 
